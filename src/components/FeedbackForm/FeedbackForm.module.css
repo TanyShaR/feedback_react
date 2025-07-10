@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.group {
+}
+
+.input {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.checkbox {
+    display: flex;
+    gap: 10px;
+}
