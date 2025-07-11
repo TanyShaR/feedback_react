@@ -16,7 +16,7 @@ export function FeedbackForm({ onChange, onSubmit }) {
         const data = Object.fromEntries(formData);
         
         //console.log(data);
-        onSabmit?.(data);
+        onSubmit?.(data);
     };
       // const validateForm = (data) => {};
   return (
