@@ -7,17 +7,28 @@ function App() {
   const [form, setForm] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   const onSubmit = (data) => {
-      setForm(data);
-      setShowModal(true);
+    setForm(data);
+    setShowModal(true);
   };
   return (
     <>
       <FeedbackForm onSubmit={onSubmit} />
       {form && (
-      <Modal title="Thank you for writing!" show={showModal}>
-        {form.username}, Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis illum nemo, eius sequi recusandae molestiae vitae dolorem rerum quo quae ex commodi, asperiores facilis nihil fuga dolor expedita explicabo quas! {form.email}
-      </Modal>
+        <Modal
+          title="Thank you for writing!"
+          show={showModal}
+          onClose={closeModal}
+        >
+          {form.username}, Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Veritatis illum nemo, eius sequi recusandae molestiae vitae
+          dolorem rerum quo quae ex commodi, asperiores facilis nihil fuga dolor
+          expedita explicabo quas! {form.email}
+        </Modal>
       )}
     </>
   );
